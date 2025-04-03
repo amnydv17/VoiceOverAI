@@ -1,43 +1,76 @@
 # VoiceOver AI
 
-## Project Overview
-VoiceOver AI is a comprehensive application designed for processing videos to extract audio, transcribe it, translate the text, and generate dubbed videos with synchronized lip movements. The application leverages advanced machine learning models and libraries to provide a seamless experience for users looking to create voiceovers or translations for video content.
+## Overview
+VoiceOver AI is an advanced speech-to-text and text-to-speech pipeline designed to process video files by extracting audio, transcribing speech, and translating the text into different languages. This project utilizes OpenAI's Whisper model for automatic speech recognition (ASR), along with various NLP tools for transliteration and translation. 
 
-## Key Features
-- **Video Upload**: Users can upload videos for processing.
-- **Audio Extraction**: Extracts audio from uploaded videos.
-- **Speech Recognition**: Utilizes Whisper for transcribing audio to text.
-- **Translation**: Translates transcribed text into target languages.
-- **Text-to-Speech**: Converts translated text back into speech.
-- **Lip Syncing**: Generates dubbed videos with synchronized lip movements using Wav2Lip.
-- **User Interface**: Provides an interactive interface using Gradio for easy access to functionalities.
+## Features
+- **Video Upload & Processing**: Users can upload video files, extract audio, and process it efficiently.
+- **Automatic Speech Recognition (ASR)**: Uses OpenAI Whisper for high-accuracy transcription.
+- **Text Processing & Translation**: Supports multiple languages using `googletrans` and `indic-transliteration`.
+- **Customizable Resolutions**: Option to resize videos to 720p for better processing.
+- **Interactive UI**: Utilizes `ipywidgets` for an intuitive and user-friendly experience.
 
 ## Installation
-To install the project dependencies, run:
+### Prerequisites
+- Python 3.8+
+- FFmpeg (for video processing)
 
-```bash
+### Steps
+1. Clone the repository:
+   ```sh
+   git clone https://github.com/yourusername/VoiceOverAI.git
+   cd VoiceOverAI
+   ```
+2. Install dependencies:
+   ```sh
+   pip install -r requirements.txt
+   ```
+
+## Usage
+1. **Upload a Video File**
+   - Run the Jupyter Notebook.
+   - Upload a video file via the UI.
+   - Choose whether to resize the video to 720p.
+2. **Extract and Transcribe Audio**
+   - The system extracts audio from the uploaded video.
+   - OpenAI Whisper is used for speech-to-text conversion.
+3. **Translation and Voice Generation**
+   - Translate the extracted text into a target language.
+   - Convert the translated text into speech.
+
+## Dependencies
+The project requires the following libraries, which are included in `requirements.txt`:
+```txt
+TTS
+numpy==1.24.0
+scipy
+git+https://github.com/openai/whisper.git
+indic-transliteration
+jiwer
+googletrans==4.0.0-rc1
+tensorflow==2.12.0
+pickle-mixin
+openai-whisper
+librosa
+matplotlib
+nltk
+batch-face
+```
+Install them with:
+```sh
 pip install -r requirements.txt
 ```
 
-## Usage
-1. Upload a video file.
-2. Choose to transcribe the audio or translate the text.
-3. Generate a dubbed video with synchronized audio.
+## Technologies Used
+- **Python**
+- **OpenAI Whisper (ASR)**
+- **TensorFlow**
+- **Google Translate API**
+- **Librosa** (for audio processing)
+- **FFmpeg** (for video processing)
 
-## Dependencies
-This project uses the following libraries:
-- TTS
-- numpy
-- scipy
-- whisper
-- indic-transliteration
-- jiwer
-- googletrans
-- tensorflow
-- librosa
-- matplotlib
-- nltk
-- batch-face
+## Contributing
+Contributions are welcome! Feel free to fork the repository and submit a pull request.
 
 ## License
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT License.
