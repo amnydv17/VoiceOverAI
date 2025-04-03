@@ -1,0 +1,14 @@
+TTS
+numpy==1.24.0
+scipy
+git+https://github.com/openai/whisper.git
+indic-transliteration
+jiwer
+googletrans==4.0.0-rc1
+tensorflow==2.12.0
+pickle-mixin
+openai-whisper
+librosa
+matplotlib
+nltk
+batch-face
